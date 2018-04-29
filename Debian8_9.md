@@ -13,6 +13,7 @@ Change server hostname to "passwork".
 
 ```
 hostnamectl set-hostname passwork
+/etc/init.d/network restart
 ```
 
 
@@ -101,7 +102,7 @@ echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sou
 ```
 
 
-**Install PHP and additional Extensions.**
+**Install PHP and additional extensions.**
 
 ```
 apt-get update
@@ -134,7 +135,7 @@ echo "extension=phalcon.so" | tee /etc/php/5.6/apache2/conf.d/20-phalcon.ini
 service apache2 restart
 ```
 
-**7. Download and install passwork.**
+**7. Download and install Passwork.**
 
 Clone the repository using your login and password.
 
@@ -357,6 +358,8 @@ Restart Apache to apply the changes.
 service apache2 restart
 ```
 
+
+Check SSL connection by going to [https://passwork.local](https://passwork.local).
 
 **10. Installing Postfix.**
 
