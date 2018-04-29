@@ -64,6 +64,9 @@ Set SELinux to permissive mode in /etc/selinux/config by setting the `SELINUX` s
 nano /etc/selinux/config
 ```
 
+
+Set:
+
 ```
 SELINUX=permissive
 ```
@@ -107,7 +110,7 @@ yum -y install php php-json php-mcrypt php-ldap php-xml php-bcmath php-mbstring
 ```
 
 
-**5. Install PHP Mongo Driver.**
+**5. Install PHP Mongo driver.**
 
 ```
 yum -y install gcc php-pear php-devel openssl-devel
@@ -123,7 +126,7 @@ systemctl restart httpd
 ```
 
 
-**6. Install Phalcon PHP Framework.**
+**6. Install Phalcon PHP framework.**
 
 ```
 yum -y install php-mysql libtool pcre-devel
@@ -205,9 +208,11 @@ systemctl restart httpd
 
 Extract archive with registration keys and move "demo.openssl.lic" and "reginfo.php" to "/var/www/app/keys/" directory.
 
+
 **Done.**
 
 Open [http://passwork.local](http://passwork.local) to access website.
+
 
 **Use default account to sign in:**
 
@@ -216,7 +221,7 @@ login: `admin@passwork.me`
 pass: `DemoDemo`
 
 
-**8. Create a SSL Certificate.**
+**8. Create a SSL certificate.**
 
 First, install the Apache SSL module.
 
@@ -287,7 +292,7 @@ cat /etc/ssl/certs/dhparam.pem | tee -a /etc/ssl/certs/apache-selfsigned.crt
 ```
 
 
-**9. Configure Apache to Use SSL.**
+**9. Configure Apache to use SSL.**
 
 Open Apache's SSL configuration file in your text editor.
 
@@ -318,6 +323,7 @@ ServerName passwork.local:443
         allow from all
     </Directory>
 ```
+
 
 * Next, find the SSLProtocol and SSLCipherSuite lines and either delete them or comment them out. The configuration we be pasting in a moment will offer more secure settings than the default included with CentOS's Apache:
 
@@ -364,6 +370,7 @@ systemctl restart httpd
 
 Check SSL connection by going to [https://passwork.local](https://passwork.local).
 
+
 **10. Installing Postfix.**
 
 Install Postfix with the following command:
@@ -404,7 +411,8 @@ smtp_sasl_tls_security_options = noanonymous
 
 Save the main.cf file and close the editor.
 
-**Configure Postfix SASL Credentials.**
+
+**Configure Postfix SASL credentials.**
 
 The Gmail credentials must now be added for authentication. Create a /etc/postfix/sasl_passwd file.
 
@@ -428,12 +436,14 @@ A Postfix lookup table must now be generated from the sasl_passwd text file by r
 postmap /etc/postfix/sasl_passwd
 ```
 
+
 Access to the sasl_passwd files should be restricted.
 
 ```
 chown root:postfix /etc/postfix/sasl_passwd*
 chmod 640 /etc/postfix/sasl_passwd*
 ```
+
 
 Lastly, reload the Postfix configuration.
 

@@ -1,10 +1,9 @@
-# How to install password manager on Debian 8, 9
+# How to install password manager on Ubuntu 16.04
 
 **1. Get root privileges and reload local package database.**
 
 ```
-su
-cd ~
+sudo -i 
 apt-get update
 ```
 
@@ -43,7 +42,6 @@ apt-get install -y git apache2
 Import the public key used by the package management system.
 
 ```
-apt-get install -y dirmngr
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
 ```
 
@@ -51,8 +49,7 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE7
 Create a /etc/apt/sources.list.d/mongodb-org-3.6.list file for MongoDB.
 
 ```
-echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.6 main" | tee /etc/apt/sources.list.d/mongodb-org-3.6.list
-echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 ```
 
 
@@ -86,22 +83,10 @@ systemctl enable mongod.service
 
 **4. Install PHP5.6.**
 
-```
-apt-get install -y apt-transport-https lsb-release ca-certificates
-```
-
-
-Get the gpg key:
+**Add the PPA.**
 
 ```
-wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-```
-
-
-Add the new repository to sources:
-
-```
-echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+add-apt-repository ppa:ondrej/php
 ```
 
 
@@ -121,7 +106,7 @@ pecl install mongo
 ```
 
 
-Enter “no” during installation.
+Enter “no” during installation
 
 ```
 echo "extension=mongo.so" | tee /etc/php/5.6/apache2/conf.d/20-mongo.ini
@@ -379,11 +364,11 @@ apt-get install -y postfix
 
 During the installation, a prompt will appear asking for your General type of mail configuration. Select Internet Site.
 
-![alt text](./images/Debian8_9_01.png)
+![alt text](./images/Ubuntu16.04_01.png)
 
 Enter the fully qualified name of your domain, passwork.
 
-![alt text](./images/Debian8_9_02.png)
+![alt text](./images/Ubuntu16.04_02.png)
 
 Once the installation is finished, open the /etc/postfix/main.cf.
 
