@@ -21,7 +21,7 @@ apt-get install avahi-daemon libnss-mdns
 ```
 
 
-Change `AVAHI_DAEMON_DETECT_LOCAL` from 1 to 0 (skip this step if you installing "passwork" on the linux server version).
+Change `AVAHI_DAEMON_DETECT_LOCAL` from 1 to 0.
 
 ```
 nano /etc/default/avahi-daemon
