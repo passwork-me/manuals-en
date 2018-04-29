@@ -12,7 +12,12 @@ Change server hostname to "passwork".
 
 ```
 hostnamectl set-hostname passwork
-/etc/init.d/network restart
+```
+
+
+Automatic local network configuration and discovery.
+```
+apt-get install avahi-daemon libnss-mdns
 ```
 
 
