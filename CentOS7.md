@@ -20,9 +20,11 @@ hostnamectl set-hostname passwork
 **2. Install Git and Apache2, add firewall rules.**
 
 ```
-yum -y install git httpd
+yum -y install git httpd avahi
 systemctl start httpd
 systemctl enable httpd
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-service=https
 firewall-cmd --permanent --add-port=5353/udp
 firewall-cmd --reload
 ```
@@ -35,6 +37,7 @@ Configure the package management system (yum).
 Create a /etc/yum.repos.d/mongodb-org-3.6.repo file so that you can install MongoDB directly, using yum.
 
 ```
+yum -y install nano
 nano /etc/yum.repos.d/mongodb-org-3.6.repo
 ```
 
@@ -95,7 +98,7 @@ systemctl enable mongod.service
 **Install the Remi repository configuration package.**
 
 ```
-yum -y install wget nano yum-utils
+yum -y install wget yum-utils
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 rpm -Uvh remi-release-7*.rpm epel-release-latest-7*.rpm
