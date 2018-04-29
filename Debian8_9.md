@@ -36,6 +36,13 @@ AVAHI_DAEMON_DETECT_LOCAL = 0
 ```
 
 
+Restart:
+
+```
+service avahi-daemon restart
+```
+
+
 **2. Install Git and Apache2.**
 
 ```

@@ -27,6 +27,7 @@ firewall-cmd --permanent --add-service=http
 firewall-cmd --permanent --add-service=https
 firewall-cmd --permanent --add-port=5353/udp
 firewall-cmd --reload
+systemctl restart avahi-daemon
 ```
 
 
