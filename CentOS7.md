@@ -3,7 +3,7 @@
 **1. Get root privileges and reload local package database.**
 
 ```
-su 
+su
 cd ~
 yum makecache
 ```
