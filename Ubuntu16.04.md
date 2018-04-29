@@ -17,7 +17,7 @@ hostnamectl set-hostname passwork
 
 Automatic local network configuration and discovery.
 ```
-apt-get install avahi-daemon libnss-mdns
+apt-get install -y avahi-daemon libnss-mdns
 ```
 
 
@@ -54,7 +54,7 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE7
 Create a /etc/apt/sources.list.d/mongodb-org-3.6.list file for MongoDB.
 
 ```
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 ```
 
 

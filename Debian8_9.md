@@ -18,7 +18,7 @@ hostnamectl set-hostname passwork
 
 Automatic local network configuration and discovery.
 ```
-apt-get install avahi-daemon libnss-mdns
+apt-get install -y avahi-daemon libnss-mdns
 ```
 
 
