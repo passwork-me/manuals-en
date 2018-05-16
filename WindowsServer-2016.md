@@ -14,7 +14,7 @@ Open “Server Manager” and add “Web Server (IIS)” role.
 
 ![alt text](./images/WS2016_02.png)
 
-Allow inbound UDP connection for private networks on 5353 port in firewall settings.
+Allow inbound UDP connection on 5353 port in firewall settings.
 
 ![alt text](./images/WS2016_03.png)
 
@@ -109,7 +109,7 @@ net start MongoDB
 ![alt text](./images/WS2016_11.png)
 
 
-**Verify that MongoDB has started successfully**
+**Verify that MongoDB has started successfully.**
 
 Verify that MongoDB has started successfully by checking the log file at c:\data\log\mongod.log for the following line: [initandlisten] waiting for connections on port 27017
 
