@@ -165,7 +165,7 @@ Save modifications and close the Notepad.
 
 **5. Download and install Passwork.**
 
-Open repository URL in IE browser [http://get.passwork.pro:81/](http://get.passwork.pro:81/) Sign in using provided Login and Password.
+Open repository URL in IE browser [https://passwork.download/](https://passwork.download/) Sign in using provided Login and Password.
 
 ![alt text](./images/WS2012R2_16.png)
 
