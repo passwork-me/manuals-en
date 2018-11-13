@@ -1,4 +1,4 @@
-# How to install password manager on Debian 8, 9
+# How to install password manager on Debian 8, 9 
 
 **1. Get root privileges and reload local package database.**
 
