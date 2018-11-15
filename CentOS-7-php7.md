@@ -145,6 +145,8 @@ cd /var/www
 git init
 git remote add origin http://passwork.download/passwork/passwork.git
 git pull origin master
+git pull origin php7
+git checkout php7
 ```
 
 
