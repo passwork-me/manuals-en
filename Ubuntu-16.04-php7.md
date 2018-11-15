@@ -139,7 +139,7 @@ Clone the repository using your login and password.
 cd /var/www
 git init
 git remote add origin http://get.passwork.pro:81/passwork/passwork.git
-git pull origin php7
+git pull origin master
 ```
 
 
