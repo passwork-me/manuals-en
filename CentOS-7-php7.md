@@ -72,7 +72,7 @@ nano /etc/selinux/config
 Set:
 
 ```
-SELINUX=permissive
+SELINUX=disabled
 ```
 
 
@@ -94,7 +94,7 @@ systemctl enable mongod.service
 ```
 
 
-**4. Install PHP5.6.**
+**4. Install PHP7.**
 
 **Install the Remi repository configuration package.**
 
@@ -103,7 +103,7 @@ yum -y install wget yum-utils
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 rpm -Uvh remi-release-7*.rpm epel-release-latest-7*.rpm
-yum-config-manager --enable remi-php56
+yum-config-manager --enable remi-php70
 ```
 
 
@@ -118,14 +118,10 @@ yum -y install php php-json php-mcrypt php-ldap php-xml php-bcmath php-mbstring
 
 ```
 yum -y install gcc php-pear php-devel openssl-devel
-pecl install mongo
-```
+pecl install mongodb
 
+echo "extension=mongodb.so" | tee /etc/php.d/20-mongodb.ini
 
-Enter “no” during installation.
-
-```
-echo "extension=mongo.so" | tee /etc/php.d/20-mongo.ini
 systemctl restart httpd
 ```
 
@@ -150,7 +146,7 @@ Clone the repository using your login and password.
 cd /var/www
 git init
 git remote add origin http://get.passwork.pro:81/passwork/passwork.git
-git pull origin master
+git pull origin php7
 ```
 
 
