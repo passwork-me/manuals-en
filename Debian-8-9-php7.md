@@ -153,6 +153,7 @@ Clone the repository using your login and password.
 cd /var/www
 git init
 git remote add origin http://passwork.download/passwork/passwork.git
+git pull origin master
 ```
 
 
