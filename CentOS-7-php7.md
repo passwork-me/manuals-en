@@ -62,7 +62,7 @@ yum -y install mongodb-org
 ```
 
 
-Set SELinux to permissive mode in /etc/selinux/config by setting the `SELINUX` setting to permissive.
+Set SELinux to disabled mode in /etc/selinux/config by setting the `SELINUX` setting to disabled.
 
 ```
 nano /etc/selinux/config
