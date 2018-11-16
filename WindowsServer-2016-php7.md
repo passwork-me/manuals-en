@@ -170,6 +170,8 @@ Download and install [Visual C++ Redistributable Packages for Visual Studio 2013
 
 Restart “IIS” to reload PHP extensions.
 
+![alt text](./images/WS2016_15_01-php7.png)
+
 **5. Download and install Passwork.**
 
 Open repository URL in IE browser [http://get.passwork.pro:81/](http://get.passwork.pro:81/) Sign in using provided Login and Password.
