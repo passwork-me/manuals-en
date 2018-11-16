@@ -158,7 +158,11 @@ Clone the repository using your login and password.
 ```
 cd /var/www
 git init
+<<<<<<< HEAD
 git remote add origin http://get.passwork.pro:81/passwork/passwork.git
+=======
+git remote add origin http://passwork.download/passwork/passwork.git
+>>>>>>> upstream/master
 git pull origin master
 ```
 
@@ -509,4 +513,8 @@ Restart Postfix:
 
 ```
 service postfix restart
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> upstream/master

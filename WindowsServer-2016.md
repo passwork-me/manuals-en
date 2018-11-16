@@ -14,7 +14,11 @@ Open “Server Manager” and add “Web Server (IIS)” role.
 
 ![alt text](./images/WS2016_02.png)
 
+<<<<<<< HEAD
 Allow inbound UDP connection on 5353 port in firewall settings.
+=======
+Allow inbound UDP connection for private networks on 5353 port in firewall settings.
+>>>>>>> upstream/master
 
 ![alt text](./images/WS2016_03.png)
 
@@ -109,7 +113,11 @@ net start MongoDB
 ![alt text](./images/WS2016_11.png)
 
 
+<<<<<<< HEAD
 **Verify that MongoDB has started successfully.**
+=======
+**Verify that MongoDB has started successfully**
+>>>>>>> upstream/master
 
 Verify that MongoDB has started successfully by checking the log file at c:\data\log\mongod.log for the following line: [initandlisten] waiting for connections on port 27017
 
@@ -142,7 +150,11 @@ You will see PHP Manager for IIS failed to install, this notice can be ignored. 
 
 Go to [https://windows.php.net/downloads/pecl/releases/mongo/1.5.1/php_mongo-1.5.1-5.6-nts-vc11-x86.zip](https://windows.php.net/downloads/pecl/releases/mongo/1.5.1/php_mongo-1.5.1-5.6-nts-vc11-x86.zip) to download Legacy MongoDB PHP Driver.
 
+<<<<<<< HEAD
 Go to [https://github.com/phalcon/cphalcon/releases/download/v3.3.2/phalcon_x86_vc11_php5.6.0_3.3.2_nts.zip](https://windows.php.net/downloads/pecl/releases/mongo/1.5.1/php_mongo-1.5.1-5.6-nts-vc11-x86.zip) to download Phalcon Framework.
+=======
+Go to [https://github.com/phalcon/cphalcon/releases/download/v3.3.2/phalcon_x86_vc11_php5.6.0_3.3.2_nts.zip](https://github.com/phalcon/cphalcon/releases/download/v3.3.2/phalcon_x86_vc11_php5.6.0_3.3.2_nts.zip) to download Phalcon Framework.
+>>>>>>> upstream/master
 
 Extract the “php_mongo-1.5.1-5.6-nts-vc11-x86.zip” archive and copy “php_mongo.dll” to “C:\Program Files (x86)\PHP\v5.6\ext”.
 
@@ -162,7 +174,11 @@ Save modifications and close the Notepad.
 
 **5. Download and install Passwork.**
 
+<<<<<<< HEAD
 Open repository URL in IE browser [http://get.passwork.pro:81/](http://get.passwork.pro:81/) Sign in using provided Login and Password.
+=======
+Open repository URL in IE browser [https://passwork.download/](https://passwork.download/) Sign in using provided Login and Password.
+>>>>>>> upstream/master
 
 ![alt text](./images/WS2016_16.png)
 
@@ -234,7 +250,11 @@ Click “Apply” button once imported.
 
 **License installation.**
 
+<<<<<<< HEAD
 Extract archive with registration keys and move "demo.openssl.lic" and "reginfo.php" to "C:\inetpub\wwwroot\app\keys\" directory.
+=======
+Extract archive with registration keys and move ".lic" and "reginfo.php" to "C:\inetpub\wwwroot\app\keys\" directory.
+>>>>>>> upstream/master
 
 
 Open [http://passwork.local](http://passwork.local) to access website.
@@ -307,4 +327,8 @@ set-service smtpsvc -StartupType Automatic
 ```
 
 
+<<<<<<< HEAD
 SMTP configuration completed.
+=======
+SMTP configuration completed.
+>>>>>>> upstream/master
