@@ -249,7 +249,7 @@ Extract archive with registration keys and move "demo.openssl.lic" and "reginfo.
 
 Open [http://passwork.local](http://passwork.local) to access website.
 
-![alt text](./images/WS2016_25.png)
+![alt text](./images/WS2016_25-php7.png)
 
 
 **Use default account to sign in:**
