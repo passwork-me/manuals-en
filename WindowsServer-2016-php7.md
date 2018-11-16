@@ -174,9 +174,15 @@ Restart “IIS” to reload PHP extensions.
 
 **5. Download and install Passwork.**
 
+<<<<<<< HEAD
 Open repository URL in IE browser [https://passwork.download/](https://passwork.download/) Sign in using provided Login and Password.
 
 If login failed add “https://passwork.download” to the trusted sites in IE settings (settings>security tab>trusted sites).
+=======
+Open repository URL in IE browser [http://get.passwork.pro:81/](http://get.passwork.pro:81/) Sign in using provided Login and Password.
+
+If login failed add “http://get.passwork.pro:81” to the trusted sites in IE settings (settings>security tab>trusted sites).
+>>>>>>> b5f75c86a6cdd5edf07bd5813465b5d659787e39
 
 ![alt text](./images/WS2016_16.png)
 
@@ -244,7 +250,11 @@ Click “Apply” button once imported.
 
 **License installation.**
 
+<<<<<<< HEAD
 Extract archive with registration keys and move ".lic" and "reginfo.php" to "C:\inetpub\wwwroot\app\keys\" directory.
+=======
+Extract archive with registration keys and move "demo.openssl.lic" and "reginfo.php" to "C:\inetpub\wwwroot\app\keys\" directory.
+>>>>>>> b5f75c86a6cdd5edf07bd5813465b5d659787e39
 
 
 Open [http://passwork.local](http://passwork.local) to access website.

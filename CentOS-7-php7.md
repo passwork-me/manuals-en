@@ -1,4 +1,4 @@
-# How to install Passwork on CentOS 7
+# How to install password manager on CentOS 7
 
 **1. Get root privileges and reload local package database.**
 
@@ -62,7 +62,7 @@ yum -y install mongodb-org
 ```
 
 
-Set SELinux to disabled mode in /etc/selinux/config by setting the `SELINUX` setting to disabled.
+Set SELinux to permissive mode in /etc/selinux/config by setting the `SELINUX` setting to permissive.
 
 ```
 nano /etc/selinux/config
@@ -145,8 +145,6 @@ cd /var/www
 git init
 git remote add origin http://passwork.download/passwork/passwork.git
 git pull origin master
-git pull origin php7
-git checkout php7
 ```
 
 
@@ -206,12 +204,12 @@ systemctl restart httpd
 
 **License installation.**
 
-Extract archive with registration keys and move `.lic` and `reginfo.json` to "/var/www/app/keys/" directory.
+Extract archive with registration keys and move "demo.openssl.lic" and "reginfo.php" to "/var/www/app/keys/" directory.
 
 
 **Done.**
 
-Open [http://passwork.local](http://passwork.local) or [http://127.0.0.1](http://127.0.0.1) to access website.
+Open [http://passwork.local](http://passwork.local) to access website.
 
 
 **Use default account to sign in:**
