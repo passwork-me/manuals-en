@@ -1,4 +1,4 @@
-# How to install Passwork on CentOS 7
+# How to install password manager on CentOS 7
 
 **1. Get root privileges and reload local package database.**
 
@@ -72,7 +72,7 @@ nano /etc/selinux/config
 Set:
 
 ```
-SELINUX=disabled
+SELINUX=permissive
 ```
 
 
@@ -94,7 +94,7 @@ systemctl enable mongod.service
 ```
 
 
-**4. Install PHP7.**
+**4. Install PHP5.6.**
 
 **Install the Remi repository configuration package.**
 
@@ -103,7 +103,7 @@ yum -y install wget yum-utils
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 rpm -Uvh remi-release-7*.rpm epel-release-latest-7*.rpm
-yum-config-manager --enable remi-php70
+yum-config-manager --enable remi-php56
 ```
 
 
@@ -118,8 +118,14 @@ yum -y install php php-json php-mcrypt php-ldap php-xml php-bcmath php-mbstring
 
 ```
 yum -y install gcc php-pear php-devel openssl-devel
-pecl install mongodb
-echo "extension=mongodb.so" | tee /etc/php.d/20-mongodb.ini
+pecl install mongo
+```
+
+
+Enter “no” during installation.
+
+```
+echo "extension=mongo.so" | tee /etc/php.d/20-mongo.ini
 systemctl restart httpd
 ```
 
@@ -145,8 +151,6 @@ cd /var/www
 git init
 git remote add origin http://passwork.download/passwork/passwork.git
 git pull origin master
-git pull origin php7
-git checkout php7
 ```
 
 
@@ -206,12 +210,12 @@ systemctl restart httpd
 
 **License installation.**
 
-Extract archive with registration keys and move `.lic` and `reginfo.json` to "/var/www/app/keys/" directory.
+Extract archive with registration keys and move "demo.openssl.lic" and "reginfo.php" to "/var/www/app/keys/" directory.
 
 
 **Done.**
 
-Open [http://passwork.local](http://passwork.local) or [http://127.0.0.1](http://127.0.0.1) to access website.
+Open [http://passwork.local](http://passwork.local) to access website.
 
 
 **Use default account to sign in:**

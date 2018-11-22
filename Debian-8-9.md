@@ -1,4 +1,4 @@
-# How to install password manager on Debian 8, 9
+# How to install Passwork on Debian 8, 9
 
 **1. Get root privileges and reload local package database.**
 
@@ -96,7 +96,7 @@ systemctl enable mongod.service
 ```
 
 
-**4. Install PHP5.6.**
+**4. Install PHP7.**
 
 ```
 apt-get install -y apt-transport-https lsb-release ca-certificates
@@ -121,7 +121,7 @@ echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sou
 
 ```
 apt-get update
-apt-get install -y php5.6 php5.6-json php5.6-mcrypt php5.6-dev php5.6-ldap php5.6-xml php5.6-bcmath php5.6-mbstring
+apt-get install -y php7.0 php7.0-json php7.0-mcrypt php7.0-dev php7.0-ldap php7.0-xml php7.0-bcmath php7.0-mbstring
 ```
 
 
@@ -129,14 +129,8 @@ apt-get install -y php5.6 php5.6-json php5.6-mcrypt php5.6-dev php5.6-ldap php5.
 
 ```
 apt-get install -y pkg-config
-pecl install mongo
-```
-
-
-Enter “no” during installation.
-
-```
-echo "extension=mongo.so" | tee /etc/php/5.6/apache2/conf.d/20-mongo.ini
+pecl install mongodb
+echo "extension=mongodb.so" | tee /etc/php/7.0/apache2/conf.d/20-mongodb.ini
 ```
 
 
@@ -146,7 +140,7 @@ echo "extension=mongo.so" | tee /etc/php/5.6/apache2/conf.d/20-mongo.ini
 git clone --depth=1 "git://github.com/phalcon/cphalcon.git"
 cd cphalcon/build
 ./install
-echo "extension=phalcon.so" | tee /etc/php/5.6/apache2/conf.d/20-phalcon.ini
+echo "extension=phalcon.so" | tee /etc/php/7.0/apache2/conf.d/20-phalcon.ini
 service apache2 restart
 ```
 
@@ -160,6 +154,8 @@ cd /var/www
 git init
 git remote add origin http://passwork.download/passwork/passwork.git
 git pull origin master
+git pull origin php7
+git checkout php7
 ```
 
 
@@ -220,12 +216,12 @@ service apache2 restart
 
 **License installation.**
 
-Extract archive with registration keys and move "demo.openssl.lic" and "reginfo.php" to "/var/www/app/keys/" directory.
+Extract archive with registration keys and move `.lic` and `reginfo.json` to "/var/www/app/keys/" directory.
 
 
 **Done.**
 
-Open [http://passwork.local](http://passwork.local) to access website.
+ Open [http://passwork.local](http://passwork.local) or [http://127.0.0.1](http://127.0.0.1) to access website.
 
 
 **Use default account to sign in:**

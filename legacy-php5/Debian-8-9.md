@@ -1,9 +1,10 @@
-# How to install Passwork on Ubuntu 16.04
+# How to install password manager on Debian 8, 9
 
 **1. Get root privileges and reload local package database.**
 
 ```
-sudo -i 
+su
+cd ~
 apt-get update
 ```
 
@@ -34,6 +35,7 @@ Set:
 AVAHI_DAEMON_DETECT_LOCAL = 0
 ```
 
+
 Restart:
 
 ```
@@ -53,6 +55,7 @@ apt-get install -y git apache2
 Import the public key used by the package management system.
 
 ```
+apt-get install -y dirmngr
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
 ```
 
@@ -60,7 +63,8 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE7
 Create a /etc/apt/sources.list.d/mongodb-org-3.6.list file for MongoDB.
 
 ```
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.6 main" | tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
 ```
 
 
@@ -92,13 +96,24 @@ systemctl enable mongod.service
 ```
 
 
-**4. Install PHP7.**
-
-**Add the PPA.**
+**4. Install PHP5.6.**
 
 ```
-apt-get install python-software-properties
-add-apt-repository ppa:ondrej/php
+apt-get install -y apt-transport-https lsb-release ca-certificates
+```
+
+
+Get the gpg key:
+
+```
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+```
+
+
+Add the new repository to sources:
+
+```
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
 ```
 
 
@@ -106,7 +121,7 @@ add-apt-repository ppa:ondrej/php
 
 ```
 apt-get update
-apt-get install -y php7.0 php7.0-json php7.0-mcrypt php7.0-dev php7.0-ldap php7.0-xml php7.0-bcmath php7.0-mbstring
+apt-get install -y php5.6 php5.6-json php5.6-mcrypt php5.6-dev php5.6-ldap php5.6-xml php5.6-bcmath php5.6-mbstring
 ```
 
 
@@ -114,9 +129,14 @@ apt-get install -y php7.0 php7.0-json php7.0-mcrypt php7.0-dev php7.0-ldap php7.
 
 ```
 apt-get install -y pkg-config
-pecl install mongodb
+pecl install mongo
+```
 
-echo "extension=mongodb.so" | tee /etc/php/7.0/apache2/conf.d/20-mongodb.ini
+
+Enter “no” during installation.
+
+```
+echo "extension=mongo.so" | tee /etc/php/5.6/apache2/conf.d/20-mongo.ini
 ```
 
 
@@ -126,7 +146,7 @@ echo "extension=mongodb.so" | tee /etc/php/7.0/apache2/conf.d/20-mongodb.ini
 git clone --depth=1 "git://github.com/phalcon/cphalcon.git"
 cd cphalcon/build
 ./install
-echo "extension=phalcon.so" | tee /etc/php/7.0/apache2/conf.d/20-phalcon.ini
+echo "extension=phalcon.so" | tee /etc/php/5.6/apache2/conf.d/20-phalcon.ini
 service apache2 restart
 ```
 
@@ -138,10 +158,12 @@ Clone the repository using your login and password.
 ```
 cd /var/www
 git init
+<<<<<<< HEAD
+git remote add origin http://get.passwork.pro:81/passwork/passwork.git
+=======
 git remote add origin http://passwork.download/passwork/passwork.git
+>>>>>>> upstream/master
 git pull origin master
-git pull origin php7
-git checkout php7
 ```
 
 
@@ -202,12 +224,12 @@ service apache2 restart
 
 **License installation.**
 
-Extract archive with registration keys and move `.lic` and `reginfo.json` to "/var/www/app/keys/" directory.
+Extract archive with registration keys and move "demo.openssl.lic" and "reginfo.php" to "/var/www/app/keys/" directory.
 
 
 **Done.**
 
- Open [http://passwork.local](http://passwork.local) or [http://127.0.0.1](http://127.0.0.1) to access website.
+Open [http://passwork.local](http://passwork.local) to access website.
 
 
 **Use default account to sign in:**
@@ -373,11 +395,11 @@ apt-get install -y postfix
 
 During the installation, a prompt will appear asking for your General type of mail configuration. Select Internet Site.
 
-![alt text](./images/Ubuntu16.04_01.png)
+![alt text](./images/Debian8_9_01.png)
 
 Enter the fully qualified name of your domain, passwork.
 
-![alt text](./images/Ubuntu16.04_02.png)
+![alt text](./images/Debian8_9_02.png)
 
 Once the installation is finished, open the /etc/postfix/main.cf.
 
@@ -491,4 +513,8 @@ Restart Postfix:
 
 ```
 service postfix restart
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> upstream/master
