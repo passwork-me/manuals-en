@@ -35,7 +35,7 @@ Click “Next”, then accept terms, again click “Next”. Select “Complete�
 
 ![alt text](./images/WS2016_07-php7.png)
 
-Uncheck the “Install MongoD as a Service” if promted about it. Click “Next”.
+Uncheck the “Install MongoD as a Service” if prompted about it. Click “Next”.
 
 ![alt text](./images/WS2016_08_01-php7.png)
 

@@ -62,7 +62,7 @@ yum -y install mongodb-org
 ```
 
 
-Set SELinux to permissive mode in /etc/selinux/config by setting the `SELINUX` setting to permissive.
+Set SELinux to disabled mode in /etc/selinux/config by setting the `SELINUX` setting to disabled.
 
 ```
 nano /etc/selinux/config
@@ -144,8 +144,7 @@ Clone the repository using your login and password.
 cd /var/www
 git init
 git remote add origin http://passwork.download/passwork/passwork.git
-git pull origin master
-git pull origin php7
+git fetch
 git checkout php7
 ```
 
@@ -216,9 +215,9 @@ Open [http://passwork.local](http://passwork.local) or [http://127.0.0.1](http:/
 
 **Use default account to sign in:**
 
-login: `admin@passwork.me`
+Login: `admin@passwork.me`
 
-pass: `DemoDemo`
+Password: `DemoDemo`
 
 
 **8. Create a SSL certificate.**
