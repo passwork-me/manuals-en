@@ -184,9 +184,13 @@ Choose “passwork” repository.
 
 ![alt text](./images/WS2016_17.png)
 
+Switch to PHP7 branch.
+
+![alt text](./images/WS2016_18_01-php7.png)
+
 Then click on download icon and select ZIP option.
 
-![alt text](./images/WS2016_18.png)
+![alt text](./images/WS2016_18_02-php7.png)
 
 Extract archive and copy content of passwork folder to “C:\inetpub\wwwroot\” directory.
 
