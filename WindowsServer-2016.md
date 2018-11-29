@@ -190,7 +190,7 @@ Switch to PHP7 branch.
 
 Then click on download icon and select ZIP option.
 
-![alt text](./images/WS2016_18_02-php7.png)
+![alt text](./images/WS2016_18_03-php7.png)
 
 Extract archive and copy content of passwork folder to “C:\inetpub\wwwroot\” directory.
 
