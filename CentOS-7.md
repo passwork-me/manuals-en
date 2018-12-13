@@ -100,9 +100,8 @@ systemctl enable mongod.service
 
 ```
 yum -y install wget yum-utils
-wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
-rpm -Uvh remi-release-7*.rpm epel-release-latest-7*.rpm
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 yum-config-manager --enable remi-php70
 ```
 
@@ -187,7 +186,8 @@ change directives accordingly the entries below.
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Order allow,deny
-        allow from all
+        Allow from all
+        Require all granted
     </Directory>
     ErrorLog logs/error_log
     TransferLog logs/access_log
