@@ -18,7 +18,7 @@ Install Passwork with [instructions](../README.md).
 
 ## Data transfer
 Create a database backup and transfer it to the new server.
-Creating and deploying backups is described in [Setting MongoDB backups](../Backups.md).
+Creating and deploying backups is described in [MongoDB Backup](../Backups.md).
 
 Find the file `<passwork>/app/config/config.ini` and transfer it to the new server.
 
