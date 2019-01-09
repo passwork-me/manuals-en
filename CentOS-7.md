@@ -319,7 +319,8 @@ ServerName passwork.local:443
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Order allow,deny
-        allow from all
+        Allow from all
+		Require all granted
     </Directory>
 ```
 
@@ -350,7 +351,8 @@ Once these changes have been made, check that your virtual host configuration fi
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Order allow,deny
-        allow from all
+        Allow from all
+		Require all granted
     </Directory>
     SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
     SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
