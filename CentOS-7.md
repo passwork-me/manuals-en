@@ -127,7 +127,7 @@ systemctl restart httpd
 
 ```
 yum -y install php-mysql libtool pcre-devel
-git clone --depth=1 "git://github.com/phalcon/cphalcon.git"
+git clone --branch 3.4.x  --depth=1 "git://github.com/phalcon/cphalcon.git"
 cd cphalcon/build
 ./install
 echo "extension=phalcon.so" | tee /etc/php.d/50-phalcon.ini

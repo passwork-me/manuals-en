@@ -127,7 +127,7 @@ echo "extension=mongo.so" | tee /etc/php/5.6/apache2/conf.d/20-mongo.ini
 **6. Install Phalcon PHP framework.**
 
 ```
-git clone --depth=1 "git://github.com/phalcon/cphalcon.git"
+git clone --branch 3.4.x  --depth=1 "git://github.com/phalcon/cphalcon.git"
 cd cphalcon/build
 ./install
 echo "extension=phalcon.so" | tee /etc/php/5.6/apache2/conf.d/20-phalcon.ini
