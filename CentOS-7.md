@@ -144,7 +144,7 @@ cd /var/www
 git init
 git remote add origin http://passwork.download/passwork/passwork.git
 git fetch
-git checkout php7
+git checkout v3
 ```
 
 
@@ -203,21 +203,21 @@ systemctl restart httpd
 ```
 
 
-**License installation.**
-
-Extract archive with registration keys and move `.lic` and `reginfo.json` to "/var/www/app/keys/" directory.
-
 
 **Done.**
 
 Open [http://passwork.local](http://passwork.local) or [http://127.0.0.1](http://127.0.0.1) to access website.
 
 
-**Use default account to sign in:**
+**Sign up:**
 
-Login: `admin@passwork.me`
+Fill in login and password for the first user. This user will become an owner and administrator.
+Click Upload keys and select `.lic` and `reginfo.json` file.
 
-Password: `DemoDemo`
+**Legacy License installation.**
+
+If you have `reginfo.php` instead of `reginfo.json` then you can upload the keys manually.
+Extract archive with registration keys and move `.lic` and `reginfo.json` (or `reginfo.php`) to "/var/www/app/keys/" directory.
 
 
 **8. Create a SSL certificate.**

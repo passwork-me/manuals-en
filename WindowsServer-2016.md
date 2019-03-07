@@ -184,13 +184,13 @@ Choose “passwork” repository.
 
 ![alt text](./images/WS2016_17.png)
 
-Switch to PHP7 branch.
+Switch to `V3` branch.
 
-![alt text](./images/WS2016_18_01-php7.png)
+![alt text](./images/WS2016_18_01-v3.png)
 
 Then click on download icon and select ZIP option.
 
-![alt text](./images/WS2016_18_03-php7.png)
+![alt text](./images/WS2016_18_03-v3.png)
 
 Extract archive and copy content of passwork folder to “C:\inetpub\wwwroot\” directory.
 
@@ -246,20 +246,20 @@ Double click on “URL Rewrite” icon. Click “Import rules” and select .hta
 Click “Apply” button once imported.
 
 
-**License installation.**
-
-Extract archive with registration keys and move `.lic` and `reginfo.json` to "C:\inetpub\wwwroot\app\keys\" directory.
-
 Open [http://passwork.local](http://passwork.local) to access website.
 
 ![alt text](./images/WS2016_25-php7.png)
 
+**Sign up**
 
-**Use default account to sign in:**
+Fill in login and password for the first user. This user will become an owner and administrator.
+Click Upload keys and select `.lic` and `reginfo.json` file.
 
-login: `admin@passwork.me`
+**Legacy License installation**
 
-pass: `DemoDemo`
+If you have `reginfo.php` instead of `reginfo.json` then you can upload the keys manually.
+Extract archive with registration keys and move `.lic` and `reginfo.json` (or `reginfo.php`) to "/var/www/app/keys/" directory.
+
 
 If login failed add “http://passwork.local” to the trusted sites in IE settings (settings>security tab>trusted sites).
 

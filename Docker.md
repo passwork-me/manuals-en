@@ -36,7 +36,7 @@ Clone the repository using your login and password:
 ```
 git clone http://passwork.download/passwork/passwork.git /server/sites/prod
 cd /server/sites/prod/
-git checkout php7
+git checkout v3
 ```
 
 ### Create Passwork config.ini file from example
@@ -250,11 +250,13 @@ Don’t forget to reload Postfix to apply changes:
 docker exec -i nginx service postfix reload
 ```
 
-## Done
-Now you can open your server in a browser. You should see Passwork landing page.  
-Click «Log in» and use default built-in account:
+**Sign up:**
+Open your host in browser. You should see a sign up page.
 
-```
-Login: admin@passwork.me
-Password: DemoDemo
-```
+Fill in login and password for the first user. This user will become an owner and administrator.
+Click Upload keys and select `.lic` and `reginfo.json` file.
+
+**Legacy license installation.**
+
+If you have `reginfo.php` instead of `reginfo.json` then you can upload the keys manually.
+Extract archive with registration keys and move `.lic` and `reginfo.json` (or `reginfo.php`) to "/var/www/app/keys/" directory.

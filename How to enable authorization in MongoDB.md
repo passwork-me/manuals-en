@@ -20,7 +20,8 @@ db.createUser(
    	{ role: "userAdminAnyDatabase", db: "admin" },
 		{ role: "dbOwner", db: "admin" }, 
 		{ role: "dbOwner", db: "pwbox" },
-		{ role: "dbOwner", db: "pwbox-cache" } ]
+		{ role: "dbOwner", db: "pwbox-cache" } ],
+	passwordDigestor:"server"		
 })  
 
 ```
