@@ -1,5 +1,16 @@
 ## LDAP and Active Directory Integration.md
 
+## Description
+When the integration is enabled, Passwork verifies the login and password of a user in LDAP / AD. If LDAP / AD allows you to connect, then Passwork authorizes the user.
+A local account will also be created in Passwork.
+
+When you log in for the first time, Passwork will notice that there is no local account yet and will redirect the user to the registration page.
+On the registration page, you must enter your login and password from your LDAP / AD account.
+
+*Important*
+
+LDAP / AD does not apply to the owner of the organization. This user is always logged in with his local account.
+This is necessary in order to always have the opportunity to log in as an administrator in case of a problem.
 
 ### 1. Find LDAP properties in a config file.
 Find `<passwork folder>/app/config/config.ini` file and section [ldap].
