@@ -47,6 +47,9 @@ Thus, in the folder `<passwork>/app/keys/` there will be files with licenses `(.
 Copy the file `<passwork>/app/config/config.ini` from the old version to the new one.  
 Compare the `<passwrok>/app/config/config.ini` with the template config `<passwork>/app/config/config.example.ini`. Perhaps the new version has additional settings.
 
+### For Windows + IIS user
+IIS can reset Rewrite rules (if you delete and load .htaccess file). Check your rewrite rules. If they are empty then repeat importing the rule like it's described in the manual https://github.com/passwork-me/manuals-en/blob/master/WindowsServer-2016.md
+
 ### Make sure that Passwork works correctly
 In case of problems: return the old folder with files to roll back to the previous version and contact our technical support at <info@passwork.me>
    
